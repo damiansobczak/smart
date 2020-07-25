@@ -1,0 +1,65 @@
+@import "./variables.scss";
+
+// Basic definitions of layout
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  grid-auto-rows: minmax($grid-row-height, auto);
+  grid-gap: $grid-gap;
+  @if $grid-auto-layout {
+    grid-auto-flow: dense;
+  }
+
+  &__col {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+  }
+}
+
+// Generate columns that stretch 100%
+@each $grid-breakpoint in map-keys($grid-breakpoints) {
+  @for $i from 1 through $grid-columns {
+    .grid__col--#{$grid-breakpoint}-#{$i} {
+      grid-column-end: span $grid-columns;
+    }
+  }
+}
+
+// Create columns without responsiveness
+@for $i from 1 through $grid-columns {
+  .grid__col--#{$i} {
+    grid-column-end: span #{$i};
+  }
+}
+
+// Generate columns with breakpoints
+@each $grid-breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: map-get($grid-breakpoints, $grid-breakpoint)) {
+    @for $i from 1 through $grid-columns {
+      .grid__col--#{$grid-breakpoint}-#{$i} {
+        grid-column-end: span #{$i};
+      }
+    }
+  }
+}
+
+// Create rows without responsiveness
+@each $grid-breakpoint in map-keys($grid-breakpoints) {
+  @for $i from 1 through $grid-columns {
+    .grid__row--#{$i} {
+      grid-row-end: span #{$i};
+    }
+  }
+}
+
+// Generates rows with breakpoints
+@each $grid-breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: map-get($grid-breakpoints, $grid-breakpoint)) {
+    @for $i from 1 through $grid-rows {
+      .grid__row--#{$grid-breakpoint}-#{$i} {
+        grid-row-end: span #{$i};
+      }
+    }
+  }
+}

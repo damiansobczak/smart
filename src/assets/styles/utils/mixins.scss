@@ -1,0 +1,31 @@
+@import "./variables.scss";
+
+@mixin breakpoint-up($key) {
+  @if map-has-key($breakpoints, $key) {
+    @media (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  } @else {
+    @warn "Sorry, we don't have this breakpoint";
+  }
+}
+
+@mixin breakpoint-down($key) {
+  @if map-has-key($breakpoints, $key) {
+    @media (max-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  } @else {
+    @warn "Sorry, we don't have this breakpoint";
+  }
+}
+
+@mixin breakpoint($key-min, $key-max) {
+  @if map-has-key($breakpoints, $key-min) and map-has-key($breakpoints, $key-max) {
+    @media (min-width: map-get($breakpoints, $key-min) and (max-width: map-get($breakpoints, $key-max))) {
+      @content;
+    }
+  } @else {
+    @warn "Sorry, we don't have this breakpoint";
+  }
+}

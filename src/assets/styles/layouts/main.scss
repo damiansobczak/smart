@@ -1,0 +1,32 @@
+@import "../base/reset.scss";
+@import "../base/fonts.scss";
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+html {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    font-size: 15px;
+}
+
+body {
+    background-color: $color-bg-light;
+    height: 100%;
+    color: $color-text-primary;
+}
+
+#root {
+    height: 100%;
+}
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $color-text-primary;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $color-text-primary;
+}

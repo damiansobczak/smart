@@ -1,0 +1,124 @@
+@import "../../assets/styles/utils/variables.scss";
+
+.temperature {
+    $self: &;
+
+    &--changing {
+        #{$self}__loader {
+            animation: rotate 1.4s cubic-bezier(0.53, 0.18, 0.38, 0.73) infinite;
+        }    
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__speech {
+        margin-left: auto;
+        color: $color-text-secondary;
+    }
+
+    &__chart {
+        position: relative;
+        min-height: 300px;
+    }
+
+    &__lines {
+        position: absolute;
+        top: calc(50% - 50px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__indicator {
+        position: absolute;
+        top: calc(50% + 5px);
+        left: calc(50%);
+        transform: translate(-50%, -50%);
+        width: 332px;
+        height: 332px;
+    }
+
+    &__circle {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: $color-bg-light;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 11px 11px 14px rgba(35, 45, 100, 0.15);
+    }
+
+    &__loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__inner-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ECF0FB, #fff);
+    }
+
+    &__info {
+        color: $color-text-secondary;
+        font-size: 0.85rem;
+        opacity: 0.6;
+        padding-bottom: 8px;
+    }
+
+    &__value {
+        color: $color-accent-blue;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        transform: translateY(-50%);
+        background-color: $color-bg-light;
+        color: $color-accent-blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 45px;
+        font-size: 1.4rem;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: opacity 0.12s ease-in-out;
+        
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &--right {
+            left: initial;
+            right: 50px;
+        }
+    }
+}
+
+@keyframes rotate{
+    0% {
+        transform: translate(-50%, -50%) rotate(0) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1.1);
+    }
+}

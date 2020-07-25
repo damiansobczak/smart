@@ -1,0 +1,11 @@
+@import "../../assets/styles/utils/variables.scss";
+
+.core {
+    padding: 32px 0;
+    flex: 1;
+
+    &__title {
+        color: $color-text-primary;
+        padding: 0 0 24px;
+    }
+}

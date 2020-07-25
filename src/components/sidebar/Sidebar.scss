@@ -1,0 +1,47 @@
+@import "../../assets/styles/utils/variables.scss";
+
+.sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90px;
+    border-radius: 12px;
+    background-color: #fff;
+    padding: 16px;
+    height: 100%;
+    margin-right: 32px;
+    box-sizing: border-box;
+
+   &__logo {
+        width: 45px;
+        height: 45px;
+        border-radius: 16px;
+        background-color: $color-bg;
+    }
+
+    &__items {
+        margin: auto 0;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 16px;
+        background-color: $color-bg-light;
+        margin-bottom: 12px;
+        transition: opacity 0.12s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &--active {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+            background-color: #fff;
+        }
+    }
+}
