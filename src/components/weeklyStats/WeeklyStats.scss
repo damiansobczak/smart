@@ -1,0 +1,121 @@
+@import "../../assets/styles/utils/variables.scss";
+
+.weeklyStats {
+    $self: &;
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        color: $color-text-secondary;
+        font-weight: 300;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 1.3rem;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: $color-accent-orange;
+            background-color: $color-accent-secondary-orange;
+        }
+    }
+
+    &__chart {
+        position: relative;
+        margin: 32px 0;
+    }
+
+    &__line {
+        stroke-width: 1;
+        stroke-dasharray: 12,6;
+        stroke: rgba($color-text-secondary, 0.15);
+    }
+
+    &__columns {
+        &:hover {
+            #{$self}__column {
+                background-color: $color-accent-secondary-orange;
+
+                &:hover {
+                    background-color: $color-accent-orange;
+
+                    #{$self}__popup {
+                        opacity: 1;
+                        transform: translateX(-50%) scale(1);
+                        top: -50px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__column {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 30px;
+        background-color: $color-accent-orange;
+        height: 200px;
+        border-radius: 8px 8px 0 0;
+        cursor: pointer;
+        transition: background 0.12s ease-in-out;
+    }
+
+    &__popup {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.9);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        background-color: #353A58;
+        width: 64px;
+        height: 40px;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.2;
+        font-weight: 300;
+        border-radius: 4px;
+        opacity: 0;
+        transition: all 0.12s ease-in-out;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -12px;
+            transform: translateX(-50%);
+            border-top: 6px solid #353A58;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+
+        span {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 400;
+        }
+    }
+
+    &__day {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -26px;
+        font-size: 0.9rem;
+        color: rgba($color-text-secondary, 0.6);
+        text-transform: uppercase;
+    }
+}

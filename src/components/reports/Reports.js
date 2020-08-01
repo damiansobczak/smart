@@ -5,6 +5,7 @@ import axios from "axios";
 export default function Reports() {
     const [tab, changeTab] = useState(0);
     const [reports, setReports] = useState([]);
+
     useEffect(() => {
         axios.get('http://localhost:3002/reports')
             .then(res => {
@@ -19,8 +20,8 @@ export default function Reports() {
         <div className="reports grid__col grid__col--sm-3">
             <h4>Reports</h4>
             <div className="reports__tabs">
-                <button className={`reports__tab ${tab === 0 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(tab - 1)}>Quarterly</button>
-                <button className={`reports__tab ${tab === 1 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(tab + 1)}>Annualy</button>
+                <button className={`reports__tab ${tab === 0 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(0)}>Quarterly</button>
+                <button className={`reports__tab ${tab === 1 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(1)}>Annualy</button>
             </div>
             <div className="reports__periods" style={{ transform: `translateX(${100 * tab * (-1)}%)` }}>
                 <div className="reports__period">

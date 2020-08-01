@@ -36,7 +36,7 @@
         font-weight: 200;
         line-height: 1.4;
         font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.4)
+        color: rgba(255, 255, 255, 0.6)
     }
 
     &__btn {
@@ -46,8 +46,8 @@
         background-color: $color-accent-orange;
         color: #fff;
         border-radius: 8px;
-        padding: 14px 20px;
-        font-size: 1rem;
+        padding: 12px 20px;
+        font-size: 0.9rem;
         cursor: pointer;
         transition: all 0.12s ease-in-out;
         margin-top: 16px;
