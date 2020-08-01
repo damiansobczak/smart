@@ -13,10 +13,9 @@
     box-sizing: border-box;
 
    &__logo {
+       margin-top: 18px;
         width: 45px;
         height: 45px;
-        border-radius: 16px;
-        background-color: $color-bg;
     }
 
     &__items {
@@ -31,7 +30,8 @@
         height: 45px;
         border-radius: 16px;
         background-color: $color-bg-light;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
+        font-size: 1.2rem;
         transition: opacity 0.12s ease-in-out;
         cursor: pointer;
 

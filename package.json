@@ -10,6 +10,7 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "gradient-path": "^2.1.0",
     "mongoose": "^5.9.5",
     "nodemon": "^2.0.2",
     "react": "^16.13.1",
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "react-transition-group": "^4.4.1"
   }
 }

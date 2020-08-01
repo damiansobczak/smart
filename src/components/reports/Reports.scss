@@ -1,0 +1,103 @@
+@import "../../assets/styles/utils/variables.scss";
+
+.reports {
+    overflow: hidden;
+
+    &__tabs {
+      display: flex;
+      align-items: center;
+      height: 42px;
+      border-radius: 8px;
+      margin-top: 24px;
+      background-color: $color-accent-secondary-blue;
+    }
+
+    &__tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      font-size: 0.95rem;
+      height: 100%;
+      margin: 0x 3px 0 0;
+      color: $color-text-secondary;
+      border-radius: 6px;
+      transition: all 0.12s ease-in-out;
+      cursor: pointer;
+
+      &:last-child {
+        margin: 0 0 0 3px;
+      }
+
+      &:hover {
+        background-color: #e5eaf5;
+      }
+
+      &--active {
+        color: #fff;
+        background-color: $color-accent-blue;
+
+        &:hover {
+          background-color: darken($color-accent-blue, 10%);
+        }
+      }
+    }
+
+    &__periods {
+      display: flex;
+      flex-wrap: nowrap;
+      transition: transform 0.3s cubic-bezier(0.73, 0.02, 0.35, 1);
+      margin-top: 32px;
+    }
+
+    &__period {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        min-width: 100%;
+        width: 100%;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 16px;
+
+      &:first-child {
+        border-right: 1px solid #E0E1EA;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      font-size: 2.6rem;
+      background-color: $color-accent-secondary-yellow;
+      color: $color-accent-yellow;
+      margin-bottom: 12px;
+
+      &--green {
+        background-color: $color-accent-secondary-green;
+        color: $color-accent-green;
+      }
+    }
+
+    &__text {
+      color: $color-text-secondary;
+      margin-bottom: 8px;
+      font-weight: 200;
+    }
+
+    &__value {
+      color: $color-text-primary;
+      font-size: 1.6rem;
+    }
+}
