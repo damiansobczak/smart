@@ -1,0 +1,61 @@
+@import "../../assets/styles/utils/variables.scss";
+
+.weeklyInfo {
+    min-width: 300px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        background-color: $color-bg-light;
+        border-radius: 12px;
+        padding: 16px 24px;
+        margin-bottom: 16px;
+
+        &:first-of-type {
+            margin-top: 24px;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: $color-accent-blue;
+
+        &--orange {
+            background-color: $color-accent-orange;
+        }
+    }
+
+    &__content {
+        margin-left: 16px;
+
+        span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $color-text-secondary;
+        }
+    }
+
+    &__summary {
+        margin-top: 24px;
+        text-align: center;
+        color: $color-text-secondary;
+        font-weight: 300;
+
+        span {
+            display: block;
+            margin-top: 8px;
+            color: $color-text-primary;
+            font-weight: 400;
+            font-size: 1.8rem;
+        }
+    }
+}

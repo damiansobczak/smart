@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Temperature.scss";
 import axios from "axios";
 import { useArc } from "../../hooks/useArc";
 
 export default function Temperature() {
     const [temperature, setTemperature] = useState(0);
-    const [arc, setArc] = useArc(130, 130, 125, -10, 0, ".temperature__indicator #arc1", temperature);
+    const arcRef = useRef(null);
+    const [{ arc, offsetArc }, setArc] = useArc(arcRef, temperature);
 
     const changeTemperature = (action) => {
         switch (String(action).toUpperCase()) {
             case "INCREASE":
                 if (temperature < 28) {
                     setTemperature(temperature + 1);
-                    setArc(130, 130, 125, -10, 0, temperature);
                 }
                 break;
             case "DECREASE":
                 if (temperature > 16) {
                     setTemperature(temperature - 1);
-                    setArc(130, 130, 125, -10, 0, temperature);
                 }
                 break;
         }
@@ -33,7 +32,7 @@ export default function Temperature() {
     }, []);
 
     useEffect(() => {
-        setArc(130, 130, 125, -10, 0, temperature + 1);
+        setArc(temperature);
     }, [temperature]);
 
     return (
@@ -61,7 +60,7 @@ export default function Temperature() {
                             <stop offset='100%' stopColor='rgba(240, 88, 46, 0.3)' />
                         </linearGradient>
 
-                        <path id="arc1" fill="transparent" stroke="url(#grad)" strokeWidth="12" d={arc} />
+                        <path id="arc1" ref={arcRef} fill="transparent" style={{ opacity: 1, strokeDasharray: arc, strokeDashoffset: offsetArc }} stroke="url(#grad)" strokeWidth="12" d="M 103.83337972409352 252.23055257723627 A 125 125 0 1 0 108.29397779163371 6.899030873474004" />
                     </svg>
                     <svg width="340" height="310" viewBox="0 0 340 310" className="temperature__stages">
                         <text x="0" y="180">16℃</text>
@@ -83,8 +82,12 @@ export default function Temperature() {
                         <defs><radialGradient id="paint0_angular" cx="1" cy="3" r="30" gradientUnits="userSpaceOnUse" gradientTransform="translate(10 45) rotate(-132.979) scale(10.0467)"><stop offset="0.000268106" stopColor="#ffffff" stopOpacity="0"></stop><stop offset="0.10351" stopColor="#4252B1" stopOpacity="0.1"></stop><stop offset="0.255208" stopColor="#3546AB"></stop></radialGradient></defs>
                     </svg>
                 </div>
-                <button className="temperature__btn" onClick={() => changeTemperature("DECREASE")}>-</button>
-                <button className="temperature__btn temperature__btn--right" onClick={() => changeTemperature("INCREASE")}>+</button>
+                <button className="temperature__btn" onClick={() => changeTemperature("DECREASE")}>
+                    <span className="icon-minus"></span>
+                </button>
+                <button className="temperature__btn temperature__btn--right" onClick={() => changeTemperature("INCREASE")}>
+                    <span className="icon-plus"></span>
+                </button>
             </div>
         </div>
     );

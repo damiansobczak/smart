@@ -60,6 +60,13 @@
         left: calc(50%);
         transform: translate(-50%, -50%) rotate(-90deg);
         pointer-events: none;
+
+        path {
+            transition: stroke-dasharray 0.3s ease-in-out, stroke-dashoffset 0.3s ease-in-out;
+            stroke-dashoffset: 0; 
+            stroke-dasharray: 0, 440.888;
+            opacity: 0;
+        }
     }
 
     &__stages {

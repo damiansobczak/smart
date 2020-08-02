@@ -6,6 +6,8 @@ import Temperature from "./components/temperature/Temperature";
 import Reports from "./components/reports/Reports";
 import Download from "./components/download/Download";
 import WeeklyStats from "./components/weeklyStats/WeeklyStats";
+import WeeklyInfo from "./components/weeklyInfo/WeeklyInfo";
+import Machine from "./components/machine/Machine";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Reports />
         <Download />
         <WeeklyStats />
+        <WeeklyInfo />
+        <Machine />
       </Core>
     </div>
   );
