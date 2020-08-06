@@ -1,0 +1,23 @@
+@import "../../../assets/styles/utils/variables.scss";
+@import "../../../assets/styles/utils/mixins.scss";
+
+.loginFeature {
+    display: flex;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(#6172d3 1px, $color-accent-blue 1px),radial-gradient(#6172d3 1px, $color-accent-blue 1px);
+    background-size: calc(20 * 1px) calc(20 * 1px);
+    background-position: 0 0,calc(10 * 1px) calc(10 * 1px);
+
+    @include breakpoint-down(lg){
+        display: none;
+    }
+
+    &__rect {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+    }
+}

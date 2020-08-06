@@ -23,7 +23,7 @@ export default function Reports() {
                 <button className={`reports__tab ${tab === 0 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(0)}>Quarterly</button>
                 <button className={`reports__tab ${tab === 1 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(1)}>Annualy</button>
             </div>
-            <div className="reports__periods" style={{ transform: `translateX(${100 * tab * (-1)}%)` }}>
+            <div className="reports__periods" style={{ transform: `translateX(calc(${100 * tab * (-1)}% - ${tab === 0 ? 0 : 32}px))` }}>
                 <div className="reports__period">
                     <div className="reports__item">
                         <span className="reports__icon icon-energy"></span>

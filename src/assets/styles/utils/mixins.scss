@@ -1,8 +1,8 @@
 @import "./variables.scss";
 
 @mixin breakpoint-up($key) {
-  @if map-has-key($breakpoints, $key) {
-    @media (min-width: map-get($breakpoints, $key)) {
+  @if map-has-key($grid-breakpoints, $key) {
+    @media (min-width: map-get($grid-breakpoints, $key)) {
       @content;
     }
   } @else {
@@ -11,8 +11,8 @@
 }
 
 @mixin breakpoint-down($key) {
-  @if map-has-key($breakpoints, $key) {
-    @media (max-width: map-get($breakpoints, $key)) {
+  @if map-has-key($grid-breakpoints, $key) {
+    @media (max-width: map-get($grid-breakpoints, $key)) {
       @content;
     }
   } @else {
@@ -21,8 +21,8 @@
 }
 
 @mixin breakpoint($key-min, $key-max) {
-  @if map-has-key($breakpoints, $key-min) and map-has-key($breakpoints, $key-max) {
-    @media (min-width: map-get($breakpoints, $key-min) and (max-width: map-get($breakpoints, $key-max))) {
+  @if map-has-key($grid-breakpoints, $key-min) and map-has-key($grid-breakpoints, $key-max) {
+    @media (min-width: map-get($grid-breakpoints, $key-min) and (max-width: map-get($grid-breakpoints, $key-max))) {
       @content;
     }
   } @else {
