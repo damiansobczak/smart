@@ -67,6 +67,10 @@
         }
     }
 
+    &__title {
+        text-transform: capitalize;
+    }
+
     &__indicators {
         display: flex;
         justify-content: center;
@@ -81,8 +85,10 @@
         border-radius: 50%;
         background-color: $color-bg;
         margin: 0 4px;
+        opacity: 0.5;
 
         &--active {
+            opacity: 1;
             background-color: $color-accent-blue;
         }
     }

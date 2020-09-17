@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./WeeklyStats.scss";
 import axios from "axios";
 
-export default function WeeklyStats() {
+export default function WeeklyStats(props) {
     const [stats, setStats] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3002/statistics').then(res => {
+        axios.get(`/statistics`).then(res => {
             setStats(res.data);
         });
     }, []);
 
     return (
-        <div className="weeklyStats grid__col grid__col--sm-5">
+        <div className="weeklyStats grid__col grid__col--sm-5" ref={props.forwardRef()}>
             <div className="weeklyStats__wrapper">
                 <div className="weeklyStats__header">
                     <h4 className="weeklyStats__title">Weekly Stats</h4>

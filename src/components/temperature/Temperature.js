@@ -3,7 +3,7 @@ import "./Temperature.scss";
 import axios from "axios";
 import { useArc } from "../../hooks/useArc";
 
-export default function Temperature() {
+export default function Temperature(props) {
     const [temperature, setTemperature] = useState(0);
     const arcRef = useRef(null);
     const [{ arc, offsetArc }, setArc] = useArc(arcRef, temperature);
@@ -24,7 +24,7 @@ export default function Temperature() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3002/temperature')
+        axios.get(`/temperature`)
             .then(res => {
                 const tmp = res.data;
                 setTemperature(Number(tmp[tmp.length - 1].temperature));
@@ -36,7 +36,7 @@ export default function Temperature() {
     }, [temperature]);
 
     return (
-        <div className="temperature temperature--changing grid__col grid__col--sm-5">
+        <div className="temperature temperature--changing grid__col grid__col--sm-5" ref={props.forwardRef()}>
             <div className="temperature__header">
                 <h4>Temperature</h4>
                 <div className="temperature__speech">

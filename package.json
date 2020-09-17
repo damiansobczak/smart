@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "nodemon server.js",
+    "server": "node server.js",
+    "dev": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,5 +45,6 @@
   "devDependencies": {
     "node-sass": "^4.14.1",
     "react-transition-group": "^4.4.1"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

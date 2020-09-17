@@ -3,9 +3,9 @@ import "./Download.scss";
 import Image from "../../assets/images/download-bg.svg";
 import Profile from "../../assets/images/profile.jpg";
 
-export default function Download() {
+export default function Download(props) {
     return (
-        <div className="download grid__col grid__col--sm-3">
+        <div className="download grid__col grid__col--sm-3" ref={props.forwardRef()}>
             <img src={Image} className="download__decoration" alt="Download decoration" />
             <img src={Profile} className="download__profile" />
             <div className="download__title">Hello Susane!</div>

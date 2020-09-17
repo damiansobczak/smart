@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Reports.scss";
 import axios from "axios";
 
-export default function Reports() {
+export default function Reports(props) {
     const [tab, changeTab] = useState(0);
     const [reports, setReports] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3002/reports')
+        axios.get(`/reports`)
             .then(res => {
                 const data = res.data;
                 const quarterly = { money: Math.floor(Number(data[data.length - 1].savedMoney)), energy: Math.floor(Number(data[data.length - 1].savedEnergy)) };
@@ -17,7 +17,7 @@ export default function Reports() {
     }, []);
 
     return (
-        <div className="reports grid__col grid__col--sm-3">
+        <div className="reports grid__col grid__col--sm-3" ref={props.forwardRef()}>
             <h4>Reports</h4>
             <div className="reports__tabs">
                 <button className={`reports__tab ${tab === 0 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(0)}>Quarterly</button>
