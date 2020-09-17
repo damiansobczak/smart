@@ -30,7 +30,7 @@ export default function WeeklyInfo(props) {
                 </div>
             </div>
             <div className="weeklyInfo__summary">
-                Weekly Average Temperature <span>22℃</span>
+                Weekly Average Temperature <span>22&#176;C</span>
             </div>
         </div>
     );

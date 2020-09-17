@@ -31,7 +31,7 @@ export default function WeeklyStats(props) {
                     <div className="weeklyStats__columns">
                         {stats.map((item, index) => (
                             <div key={index} className="weeklyStats__column" style={{ left: 14.28 * index + 5 + '%', height: (12 - (28 - item.temperature)) * 100 / 12 + "%" }}>
-                                <div className="weeklyStats__popup">Average <span>{item.temperature + "℃"}</span></div>
+                                <div className="weeklyStats__popup">Average <span>{item.temperature}&#176;C</span></div>
                                 <div className="weeklyStats__day">{item.day.slice(0, 3)}</div>
                             </div>
                         ))}

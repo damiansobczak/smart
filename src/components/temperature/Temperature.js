@@ -63,19 +63,19 @@ export default function Temperature(props) {
                         <path id="arc1" ref={arcRef} fill="transparent" style={{ opacity: 1, strokeDasharray: arc, strokeDashoffset: offsetArc }} stroke="url(#grad)" strokeWidth="12" d="M 103.83337972409352 252.23055257723627 A 125 125 0 1 0 108.29397779163371 6.899030873474004" />
                     </svg>
                     <svg width="340" height="310" viewBox="0 0 340 310" className="temperature__stages">
-                        <text x="0" y="180">16℃</text>
-                        <text x="30" y="70">19℃</text>
-                        <text x="155" y="15">22℃</text>
-                        <text x="280" y="70">25℃</text>
-                        <text x="310" y="180">28℃</text>
-                    </svg>
+                        <text x="0" y="180">16&#176;C</text>
+                        <text x="30" y="70">19&#176;C</text>
+                        <text x="155" y="15">22&#176;C</text>
+                        <text x="280" y="70">25&#176;C</text>
+                        <text x="310" y="180">28&#176;C</text>
+                    </svg>&#176;C
                 </div>
 
                 {/* Circle */}
                 <div className="temperature__circle">
                     <div className="temperature__inner-circle">
                         <div className="temperature__info">Normal</div>
-                        <div className="temperature__value">{temperature + "℃"}</div>
+                        <div className="temperature__value">{temperature}&#176;C</div>
                     </div>
                     <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg" className="temperature__loader">
                         <path d="M125.302 24.6984C126.81 23.1899 126.817 20.7359 125.232 19.3071C118.89 13.5865 111.61 8.98482 103.701 5.70903C94.6018 1.93993 84.8491 0 75 0C65.1508 0 55.3982 1.93993 46.2987 5.70903C38.3903 8.98482 31.1099 13.5865 24.7675 19.3071C23.1833 20.736 23.1899 23.1899 24.6983 24.6983C26.2068 26.2068 28.6454 26.1976 30.238 24.7782C35.8571 19.7699 42.2841 15.7339 49.2551 12.8464C57.4173 9.46555 66.1654 7.72545 75 7.72545C83.8346 7.72545 92.5827 9.46556 100.745 12.8464C107.716 15.7339 114.143 19.7699 119.762 24.7782C121.355 26.1976 123.793 26.2068 125.302 24.6984Z" fill="url(#paint0_angular)"></path>
