@@ -43,7 +43,7 @@ export default function Machine(props) {
             });
     }, []);
     return (
-        <div className="machine grid__col grid__col--sm-3" ref={props.forwardRef()}>
+        <div className="machine grid__col grid__col--sm-12 grid__col--md-6 grid__col--lg-3" ref={props.forwardRef()}>
             <h4>Machine</h4>
             <div className="machine__wrapper">
                 <div className="machine__slider" style={{ transform: `translateX(${100 * slide * (-1)}%)` }}>

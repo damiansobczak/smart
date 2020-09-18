@@ -12,7 +12,7 @@ export default function WeeklyStats(props) {
     }, []);
 
     return (
-        <div className="weeklyStats grid__col grid__col--sm-5" ref={props.forwardRef()}>
+        <div className="weeklyStats grid__col grid__col grid__col--sm-12 grid__col--lg-5" ref={props.forwardRef()}>
             <div className="weeklyStats__wrapper">
                 <div className="weeklyStats__header">
                     <h4 className="weeklyStats__title">Weekly Stats</h4>

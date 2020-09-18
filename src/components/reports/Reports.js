@@ -17,7 +17,7 @@ export default function Reports(props) {
     }, []);
 
     return (
-        <div className="reports grid__col grid__col--sm-3" ref={props.forwardRef()}>
+        <div className="reports grid__col grid__col--sm-12 grid__col--md-6 grid__col--lg-3" ref={props.forwardRef()}>
             <h4>Reports</h4>
             <div className="reports__tabs">
                 <button className={`reports__tab ${tab === 0 ? 'reports__tab--active' : ''}`} onClick={() => changeTab(0)}>Quarterly</button>

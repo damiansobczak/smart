@@ -15,7 +15,7 @@ export default function WeeklyInfo(props) {
     }, []);
 
     return (
-        <div className="weeklyInfo grid__col grid__col--sm-3" ref={props.forwardRef()}>
+        <div className="weeklyInfo grid__col grid__col--sm-12 grid__col--md-6 grid__col--lg-3" ref={props.forwardRef()}>
             <h4>Info</h4>
             <div className="weeklyInfo__item">
                 <span className="weeklyInfo__icon icon-energy"></span>

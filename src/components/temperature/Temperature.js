@@ -36,7 +36,7 @@ export default function Temperature(props) {
     }, [temperature]);
 
     return (
-        <div className="temperature temperature--changing grid__col grid__col--sm-5" ref={props.forwardRef()}>
+        <div className="temperature temperature--changing grid__col grid__col--lg-5 grid__col--sm-12 grid__col--md-6" ref={props.forwardRef()}>
             <div className="temperature__header">
                 <h4>Temperature</h4>
                 <div className="temperature__speech">
@@ -68,7 +68,7 @@ export default function Temperature(props) {
                         <text x="155" y="15">22&#176;C</text>
                         <text x="280" y="70">25&#176;C</text>
                         <text x="310" y="180">28&#176;C</text>
-                    </svg>&#176;C
+                    </svg>
                 </div>
 
                 {/* Circle */}
