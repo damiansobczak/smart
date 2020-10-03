@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./LoginForm.scss";
 import Logo from "../../../assets/images/login-logo.svg";
 import { TweenMax, Power2 } from "gsap";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 
@@ -35,8 +34,7 @@ const LoginForm = (props) => {
         })
             .then(res => {
                 if (res.status === 200 && res.data.user) {
-                    console.log("User logged in", res.data.user[0]._id, res.data.user[0].name, res.data.user[0].email);
-                    console.log(props.history.push('/dashboard'));
+                    props.history.push('/dashboard');
                 } else {
                     setForm({ ...form, err: res.data.message });
                 }

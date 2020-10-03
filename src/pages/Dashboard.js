@@ -9,8 +9,10 @@ import WeeklyStats from "../components/weeklyStats/WeeklyStats";
 import WeeklyInfo from "../components/weeklyInfo/WeeklyInfo";
 import Machine from "../components/machine/Machine";
 import { TweenMax, Power2 } from "gsap";
+import withAuth from "../hoc/withAuth";
+import { withRouter } from "react-router-dom";
 
-export default function Dashboard() {
+const Dashboard = ({ isAuth, history }) => {
     const _refTemperature = useRef(null);
     const _refReports = useRef(null);
     const _refDownload = useRef(null);
@@ -27,6 +29,12 @@ export default function Dashboard() {
         TweenMax.to(_refAnim.current, { ease: Power2.easeInOut, duration: 1, left: '-100%' });
     }, []);
 
+    useEffect(() => {
+        if (typeof isAuth === 'boolean' && isAuth === false) {
+            history.push('/login');
+        }
+    });
+
     return (
         <div className="dashboard">
             <div className="dashboard__anim" ref={_refAnim}></div>
@@ -42,3 +50,5 @@ export default function Dashboard() {
         </div>
     );
 }
+
+export default withRouter(withAuth(Dashboard));

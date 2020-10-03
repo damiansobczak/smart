@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Login.scss";
 import LoginForm from "../components/login/loginForm/LoginForm";
 import LoginFeature from "../components/login/loginFeature/loginFeature";
+import withAuth from "../hoc/withAuth";
+import { withRouter } from "react-router-dom";
 
-export default function Login() {
+const Login = ({ isAuth, history }) => {
+    useEffect(() => {
+        if (typeof isAuth === 'boolean' && isAuth) {
+            history.push('/dashboard');
+        }
+    });
+
     return (
         <div className="login">
             <LoginForm />
@@ -11,3 +19,5 @@ export default function Login() {
         </div>
     );
 }
+
+export default withRouter(withAuth(Login));
