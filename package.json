@@ -43,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react-transition-group": "^4.4.1"
   },
   "proxy": "http://localhost:3000"
